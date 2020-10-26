@@ -7,7 +7,7 @@
                 <%= album[i].name %>
             </a>
         </li>
-        <a href="/albums/<%= album[i]._id %>/edit">edit</a>
+        <a href="/albums/<%= album[i]._id %>/editalbum">edit</a>
         <form action="/albums/<%= album[i]._id %>?_method=DELETE" method="POST">
             <button>Delete</button>
         </form>
