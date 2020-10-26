@@ -1,10 +1,10 @@
 <h1>
-    <%= album.name %>'s Detail Page</h1>
+    <%= album.name %>'s Songs Page</h1>
 <h4>Create a New song</h4>
 <form action="/albums/<%= album.id %>/songs" method="POST">
     <div class="form-group">
-        <label for="songText">song Text</label>
-        <input type="text" class="form-control" id="songText" name="songText" />
+        <label for="songName">song Text</label>
+        <input type="text" class="form-control" id="songName" name="songName" />
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -13,7 +13,7 @@
     <% album.songs.forEach(song => { %>
         <li>
             <a href="/albums/<%= album.id %>/songs/<%= song.id %>/edit">
-                <%= song.songText %>
+                <%= song.songName %>
             </a>
             <form action="/albums/<%= album.id %>/songs/<%= song.id %>?_method=DELETE" method="POST">
                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
