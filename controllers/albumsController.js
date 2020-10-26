@@ -28,7 +28,7 @@ router.get('/:albumId', (req, res) => {
 // CREATE A NEW Album
 router.post('/', (req, res) => {
     Album.create(req.body, (error, newAlbum) => {
-        res.send(newAlbum);
+        res.redirect("albums");
     });
 });
 
