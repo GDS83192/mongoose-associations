@@ -1,7 +1,8 @@
 const router = require('express').Router();
+const dayjs = require('dayjs')
 const User = require('../models/user').User;
 const Tweet = require('../models/user').Tweet;
-
+const timestamp = dayjs();
 // INDEX
 router.get('/', (req, res) => {
     User.find({}, (error, allUsers) => {
@@ -73,7 +74,7 @@ router.get('/:userId/tweets/:tweetId/edit', (req, res) => {
         // find tweet embedded in user
         const foundTweet = foundUser.tweets.id(tweetId);
         // update tweet text and completed with data from request body
-        res.render('tweets/edit.ejs', { foundUser, foundTweet });
+        res.render('tweets/edit.ejs', { foundUser, foundTweet, timestamp });
     });
 });
 // UPDATE TWEET EMBEDDED IN A USER DOCUMENT
