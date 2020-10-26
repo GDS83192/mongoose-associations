@@ -38,6 +38,16 @@ router.post('/', (req, res) => {
     });
 });
 
+//DELETE User
+
+// DELETE
+router.delete('/:id', (req, res) => {
+    User.findByIdAndRemove(req.params.id, (error) => {
+        res.redirect('/users');
+    });
+});
+
+
 
 // CREATE TWEET EMBEDDED IN USER
 router.post('/:userId/tweets', (req, res) => {
@@ -83,6 +93,7 @@ router.put('/:userId/tweets/:tweetId', (req, res) => {
         });
     });
 });
+
 router.delete('/:userId/tweets/:tweetId', (req, res) => {
     console.log('DELETE TWEET');
     // set the value of the user and tweet ids
