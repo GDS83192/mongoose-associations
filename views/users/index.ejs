@@ -1,0 +1,15 @@
+<h1>
+    <%= user.name %>User Index Page</h1>
+<ul>
+    <% for (let i = 0; i < user.length; i++) { %>
+        <li>
+            <a href="/users/<%= user[i]._id %>">
+                <%= user[i].name %>
+            </a>
+        </li>
+        <a href="/users/<%= user[i]._id %>/edit">edit</a>
+        <form action="/users/<%= user[i]._id %>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
+        <% } %>
+</ul>
