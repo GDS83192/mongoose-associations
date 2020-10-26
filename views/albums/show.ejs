@@ -3,12 +3,12 @@
 <h4>Create a New song</h4>
 <form action="/albums/<%= album.id %>/songs" method="POST">
     <div class="form-group">
-        <label for="songName">song Text</label>
+        <label for="songName">Song Name</label>
         <input type="text" class="form-control" id="songName" name="songName" />
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-<h1>songs</h1>
+<h1>Songs</h1>
 <ul>
     <% album.songs.forEach(song => { %>
         <li>

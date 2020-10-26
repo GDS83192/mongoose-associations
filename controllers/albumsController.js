@@ -48,6 +48,22 @@ router.delete('/:id', (req, res) => {
 });
 
 
+// // UPDATE
+// router.put('/:id', (req, res) => {
+
+//     Album.findByIdAndUpdate(req.params.id, req.body, (error) => {
+//         res.redirect('/albums');
+//     });
+// });
+
+// // EDIT
+// router.get('/:id/edit', (req, res) => {
+//     Album.findById(req.params.id, (error, album) => {
+//         res.render('./albums/edit.ejs', { album });
+//     });
+// });
+
+
 
 // CREATE SONG EMBEDDED IN ALBUM
 router.post('/:albumId/songs', (req, res) => {
