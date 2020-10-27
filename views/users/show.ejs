@@ -14,7 +14,7 @@
         <li>
             <a href="/users/<%= user.id %>/tweets/<%= tweet.id %>/edit">
                 <%= tweet.tweetText %>
-                    <%= moment(Date()).format(shortDateFormat) %>
+                    <%= dayjs(tweet.updatedAt); %>
             </a>
             <form action="/users/<%= user.id %>/tweets/<%= tweet.id %>?_method=DELETE" method="POST">
                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
