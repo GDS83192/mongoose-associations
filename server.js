@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const expressLayouts = require('express-ejs-layouts');
 const PORT = 3000;
+var moment = require('moment');
+var shortDateFormat = "ddd @ h:mmA"; // this is just an example of storing a date format once so you can change it in one place and have it propagate
+app.locals.moment = moment; // this makes moment available as a variable in every EJS page
+app.locals.shortDateFormat = shortDateFormat;
 
 const mongoURI = 'mongodb://localhost:27017/mongoRelationships';
 
