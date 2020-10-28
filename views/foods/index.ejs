@@ -1,0 +1,14 @@
+<h1>Foods Index Page</h1>
+<ul>
+    <% for (let i = 0; i < foods.length; i++) { %>
+        <li>
+            <a href="/foods/<%= foods[i]._id %>">
+                <%= foods[i].name %>
+            </a>
+        </li>
+        <a href="/foods/<%= foods[i]._id %>/edit">edit</a>
+        <form action="/foods/<%= foods[i]._id %>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
+        <% } %>
+</ul>

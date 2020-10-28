@@ -14,7 +14,7 @@ app.locals.dayjs = require('dayjs');
 const mongoURI = 'mongodb://localhost:27017/mongoRelationships';
 
 mongoose.connect(
-    mongoURI, { useNewUrlParser: true, useUnifiedTopology: true },
+    mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
     () => {
         console.log('the connection with mongod is established');
     }
@@ -30,6 +30,8 @@ app.use(methodOverride('_method'));
 // ABOVE our app.get()
 app.use('/users', require('./controllers/usersController'));
 app.use('/albums', require('./controllers/albumsController'));
+app.use('/ingredients', require('./controllers/ingredientsController'));
+app.use('/foods', require('./controllers/foodsController'));
 app.get('/', (req, res) => {
     res.render('home.ejs');
 });
